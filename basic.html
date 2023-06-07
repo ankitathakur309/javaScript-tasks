@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Javascript</title>
+    <link rel="stylesheet" href="basic.css">
+</head>
+
+<body>
+    <!-- Write a program to print your name and address, -->
+    <div class="task1">
+        <script>
+            document.write("Ankita Thakur <br>");
+            document.write("Mujaffarpur, Bihar");
+        </script>
+    </div>
+    <br><br><br><br>
+    <!-- Write a program to check whether value and data-type of two variable are same. -->
+    <div class="task2">
+        <h3>Compare any two from the following</h3><br>
+        <input type="number" placeholder="enter any number" id="inNum"><br><br>
+        <input type="text" placeholder="enter any number as a string" id="inText"><br><br>
+        <input type="number" placeholder="enter any number" id="inNum2"><br><br>
+        <button onclick="check()">Compare</button>
+        <script>
+            function check() {
+
+                var a = document.getElementById('inNum').value;
+                var b = document.getElementById('inText').value;
+                var c = document.getElementById('inNum2').value;
+
+                if ((a === b) || (b === c)) {
+                    alert("Values are same, but datatypes are not same");
+                }
+                if (a == c) {
+                    alert("Values are same as well as datatype");
+                }
+            }
+        </script>
+    </div>
+
+    <br><br>
+    <!-- Write a program to add two strings and return them with all alphabet capital. -->
+
+    <div class="task3">
+        <input type="text" id="stnm1" required><br><br>
+        <input type="text" id="stnm2" required><br><br>
+
+        <button onclick="changeIntoUpperCase()">changeIntoUpperCase</button>
+
+        <script>
+            function changeIntoUpperCase() {
+                var str1 = document.getElementById('stnm1').value;
+                var str2 = document.getElementById('stnm2').value;
+                alert(str1.toUpperCase() + (" ") + str2.toUpperCase());
+            }
+        </script>
+    </div>
+
+
+
+    <br><br>
+    <!-- Write a JavaScript program to convert the length of a given string in bytes. -->
+
+    <div class="task4">
+        <input type="text" placeholder="enter any string" id="inpString" required>
+        <button onclick="getLength()">Get length</button>
+        <script>
+            function getLength() {
+                var str = document.getElementById('inpString').value;
+                alert(("Length of the string is ") + str.length + (" bytes"));
+            }
+        </script>
+    </div>
+
+
+    <!-- Write a JavaScript program to round a number to a specified amount of digits. -->
+
+    <div class="task5">
+        <input type="number" placeholder="Enter any float number" id="inRound" required>
+        <button onclick="roundNumber()">Round</button>
+        <script>
+            function roundNumber() {
+                var num = document.getElementById('inRound').value;
+                alert(("The number after round is ") + Math.round(num));
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>
