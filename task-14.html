@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Josefin+Sans&family=Kanit&family=Poppins:wght@500&family=Roboto+Mono&family=Space+Grotesk&display=swap');
+
+        body {
+            text-align: center;
+            font-family: 'Inconsolata', monospace;
+            font-family: 'Josefin Sans', sans-serif;
+            font-family: 'Kanit', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+            font-family: 'Space Grotesk', sans-serif;
+            background: rgb(131, 58, 180);
+            background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+        }
+
+        button {
+            cursor: pointer;
+            padding: 3px;
+            border-radius: 10px;
+            transition: .6s ease-in-out;
+        }
+
+        button:hover{
+            color: beige;
+            background-color: #0659ce;
+        }
+
+        h4 {
+            border-bottom: 2px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Write a function that filters out negative numbers. -->
+
+    <div class="div1">
+        <h4>Check the number is negative of non-negative</h4>
+        <input type="number" placeholder="Enter any number" id="numIn">
+        <button onclick="filterNigativeNumbers()">Check</button>
+        <script>
+            // var array = [1, 2, 4, 23, -3, -2, 34, -53, 10];
+
+            function filterNigativeNumbers() {
+
+                var a = document.getElementById('numIn').value;
+
+                if (a < 0) {
+                    alert(a + " is a negative number.");
+                }
+                else {
+                    alert(a + " is a non-negative number.");
+                }
+            }
+        </script>
+
+    </div>
+    <!-- Write a JavaScript function to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference. -->
+    <br><br>
+    <div class="div2">
+        <h4>If the number is greater than 13 return double the absolute difference</h4>
+        <input type="number" placeholder="enter any number" id="numIn2">
+        <button onclick="difference()">Get difference</button>
+        <script>
+
+            function difference() {
+                var num = document.getElementById('numIn2').value;
+                var a;
+                var b;
+                if (num > 13) {
+                    a = num - 13;
+                    b = a * 2;
+                    alert("The number is greater than 13");
+                    alert("Double absolute diffrence is " + b);
+                }
+                else {
+                    b = num - 13;
+                    alert("The number is smaller than 13");
+                    alert("The diffrence will be a negative number, that is " + b);
+                }
+            }
+
+        </script>
+
+    </div>
+
+    <!-- Write a function of Fibonacci series using JavaScript -->
+    <br><br>
+    <div class="div3">
+        <h4>Printing the Fibonacci series</h4>
+        <input type="number" placeholder="enter the Nth term to get the Fibonacci series" id="numIn3">
+        <button onclick="Fibonacci()">Get series</button>
+        <script>
+
+            var n1 = 0;
+            var n2 = 1;
+            var n3;
+            var temp;
+
+            function Fibonacci() {
+                var num = document.getElementById('numIn3').value;
+                document.write("The series is... <br><br>");
+
+                document.write(n1 + "<br>");
+                document.write(n2 + "<br>");
+                for (var i = 2; i <= num; i++) {
+                    n3 = n1 + n2;
+                    document.write(n3);
+                    document.write("<br>");
+                    n1 = n2;
+                    n2 = n3;
+                }
+            }
+
+        </script>
+
+    </div>
+
+    <!-- Write a JavaScript program to sum the multiples of 3 and 5 under 1000 using function. -->
+    <br><br>
+    <div class="div4">
+        <h4><button onclick="sum()">JavaScript program to sum the multiples of 3 and 5 under 1000 using function.</button></h4>
+        <script>
+
+            function sum() {
+                var num;
+                var count = 0;
+                for (num = 1; num <= 1000; num++) {
+                    if (num % 3 == 0 && num % 5 == 0) {
+                        count += num;
+                    }
+                    else {
+                        continue;
+                    }
+                }
+                alert(count);
+            }
+
+        </script>
+
+    </div>
+    <!-- Write a program to return cube of a number using function object. -->
+    <br><br>
+    <div class="div5">
+        <h4>Get the cube of the number</h4>
+        <input type="number" placeholder="enter any number" id="numIn5">
+        <button onclick="cube()">Cube</button>
+        <script>
+
+            function cube() {
+
+                var num = document.getElementById('numIn5').value;
+
+                alert(("Cube of the number is ") + (num * num * num));
+            }
+
+        </script>
+
+    </div>
+
+</body>
+
+</html>
