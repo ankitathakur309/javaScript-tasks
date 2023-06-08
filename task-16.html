@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js DOM | Details</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Kanit&family=Roboto+Mono&family=Space+Grotesk&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Inconsolata', monospace;
+            font-family: 'Kanit', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background: rgb(234, 163, 48);
+            background: radial-gradient(circle, rgba(234, 163, 48, 1) 0%, rgba(29, 253, 145, 1) 50%, rgba(231, 14, 98, 1) 100%);
+            text-align: center;
+            color: black;
+        }
+
+        button {
+            color: rgb(0, 26, 17);
+            cursor: pointer;
+        }
+
+        form {
+            text-align: center;
+            color: rgb(7, 33, 36);
+        }
+
+        input {
+            color: black;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: rgb(7, 33, 36);
+            border-bottom: 2px solid rgb(71, 79, 81);
+        }
+
+        #formContainer {
+            color: rgb(171, 249, 2);
+        }
+
+        #image {
+            border-radius: 5%;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #0ac6eb;
+            text-align: justify;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        .btn {
+            background-color: #a609fa;
+            padding: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        button {
+            width: 100px;
+            padding: 5px;
+            border-radius: 10px;
+            /* border: 1px solid rgb(8, 240, 248); */
+            /* background-color: #e7960c; */
+            cursor: pointer;
+            transition: 0.6s ease-in-out;
+        }
+
+        button:hover {
+            color: rgb(6, 230, 103);
+            background-color: #1b06ff;
+        }
+
+        #btn1 {
+            font-size: 20px;
+        }
+
+        #btn2 {
+            font-size: 30px;
+        }
+
+        #btn3 {
+            font-size: 35px;
+        }
+
+        #btn4 {
+            font-size: 20px;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        h3 {
+            border-bottom: 3px solid white;
+            color: white;
+            font-size: 50px;
+        }
+
+        #timeDiv {
+            color: rgb(49, 49, 50);
+            padding: 10px;
+            background: rgb(174, 238, 238);
+            background: linear-gradient(90deg, rgba(174, 238, 238, 1) 11%, rgba(200, 15, 146, 1) 79%);
+            font-weight: bolder;
+            font-size: 50px;
+
+        }
+
+        .dateDiv {
+            font-size: 30px;
+            font-weight: bold;
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Write a JavaScript Script that will took all the values from Basic Information Form you have created earlier and show on the same page & below the form. -->
+
+    <h1>Basic Information Form</h1><br>
+    <form>
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" required><br><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required><br><br>
+
+        <label for="phoneNumber">Phone Number:</label><br>
+        <input type="tel" id="phoneNumber" required><br><br>
+
+        <button type="button" onclick="showFormData()">Submit</button>
+    </form>
+    <script>
+
+        function showFormData() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+
+            var formDataElement = document.createElement("p");
+            formDataElement.innerHTML =
+                "<strong>First Name:</strong> " + firstName + "<br>" +
+                "<strong>Last Name:</strong> " + lastName + "<br>" +
+                "<strong>Email:</strong> " + email + "<br>" +
+                "<strong>Phone Number:</strong> " + phoneNumber;
+
+            var formContainer = document.getElementById("formContainer");
+            formContainer.appendChild(formDataElement);
+        }
+
+    </script>
+
+    <div align="center" id="formContainer"></div>
+
+    <br><br>
+    <!-- Write a JavaScript Script that will change the image inside an img tag on button click. -->
+    <center>
+        <img src="tree.jpg" id="image" width="500px" height="350px" /><br><br>
+        <button id="changebtn" onclick="ChangeOnClick()">Change</button>
+    </center>
+    <script>
+
+        function ChangeOnClick() {
+            var a = document.getElementById("image");
+            var images = ['dear.jpg'];
+            var i;
+            for (i = 0; i < images.length; i++) {
+                a.src = images[i];
+            }
+        }
+
+    </script>
+
+    <br><br>
+    <!-- Write a JavaScript Script that will increase and decrease the font size of text on button click. -->
+    <div class="container" id="main">
+        <h2 align="center">COMPUTER</h2>
+        <p>A computer is a machine that can be programmed to carry out sequences of arithmetic or logical operations
+            (computation) automatically. Modern digital electronic computers can perform generic sets of operations
+            known as programs. These programs enable computers to perform a wide range of tasks. A computer system is a
+            nominally complete computer that includes the hardware, operating system (main software), and peripheral
+            equipment needed and used for full operation. This term may also refer to a group of computers that are
+            linked and function together, such as a computer network or computer cluster.</p><br>
+        <p>A broad range of industrial and consumer products use computers as control systems. Simple special-purpose
+            devices like microwave ovens and remote controls are included, as are factory devices like industrial robots
+            and computer-aided design, as well as general-purpose devices like personal computers and mobile devices
+            like smartphones. Computers power the Internet, which links billions of other computers and users.</p>
+    </div>
+    <div class="btn">
+        <h3>Change the font size of above text</h3>
+        <button id="btn1" onclick="fontSizeChange1()">A</button>
+        <button id="btn2" onclick="fontSizeChange2()">A</button>
+        <button id="btn3" onclick="fontSizeChange3()">A</button>
+        <button id="btn4" onclick="fontSizeChange4()">Normal</button>
+    </div>
+    <script>
+        function fontSizeChange1() {
+            document.getElementById("main").style.fontSize = "15px";
+        }
+        function fontSizeChange2() {
+            document.getElementById("main").style.fontSize = "30px";
+        }
+        function fontSizeChange3() {
+            document.getElementById("main").style.fontSize = "35px";
+        }
+        function fontSizeChange4() {
+            document.getElementById("main").style.fontSize = "medium";
+        }
+    </script>
+
+    <br><br>
+    <!-- Write a JavaScript Script that shows current date & time on a webpage. -->
+    <div class="main" id="container">
+        <h3>Time</h3><br><br>
+        <div id="timeDiv">
+            <script>
+                function showTime() {
+                    var date = new Date();
+                    var hours = date.getHours();
+                    var minutes = date.getMinutes();
+                    var seconds = date.getSeconds();
+                    var meridiem = "AM";
+
+
+                    if (hours > 12) {
+                        hours = hours - 12;
+                        meridiem = "PM";
+                    }
+
+                    if (hours === 0) {
+                        hours = 12;
+                    }
+
+                    hours = hours < 10 ? "0" + hours : hours;
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    var time = hours + ":" + minutes + ":" + seconds + " " + meridiem;
+
+                    document.getElementById("timeDiv").innerText = time;
+
+                    setTimeout(showTime, 1000);
+                }
+
+                showTime();
+            </script>
+        </div>
+        <div class="dateDiv">
+            <script>
+                var date = new Date();
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                document.write("<br>Date : " + day + " / " + month + " / " + year);  
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
